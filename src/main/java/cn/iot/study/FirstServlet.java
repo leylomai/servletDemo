@@ -23,6 +23,10 @@ public class FirstServlet extends HttpServlet {
         out.println("</head>");
         out.println("<body>");
         out.println("<h1> Hello! " + name + " !</h1>");
+        out.println(request.getRequestURL() + "<br>");
+        out.println(request.getRequestURI() + "<br>");
+        out.println(request.getContextPath() + "<br>");
+        out.println(request.getServletPath() + "<br>");
         out.println("</body>");
         out.println("</html>");
 
