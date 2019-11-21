@@ -1,4 +1,4 @@
-package cn.iot.study;
+package cn.iot.study.forwardServlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
