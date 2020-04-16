@@ -1,5 +1,7 @@
 package cn.iot.study;
 
+import cn.iot.study.listener.MyHttpSessionActivationListener;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
 import javax.servlet.ServletOutputStream;
@@ -7,15 +9,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = "/hello.view")
+@WebServlet(urlPatterns = "/helloFirst.view")
 public class FirstServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.setAttribute("activation", new MyHttpSessionActivationListener("rural"));
+        System.out.println("session id:" + session.getId());
+
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String name = request.getParameter("name");

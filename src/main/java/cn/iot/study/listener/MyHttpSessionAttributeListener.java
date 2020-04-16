@@ -1,13 +1,15 @@
 package cn.iot.study.listener;
 
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 
+@WebListener
 public class MyHttpSessionAttributeListener implements HttpSessionAttributeListener {
 
     @Override
     public void attributeAdded(HttpSessionBindingEvent se) {
-        System.out.println("attribute:" + se.getName() + "add, value:" + se.getValue());
+        System.out.println("attribute:" + se.getName() + ", value:" + se.getValue());
     }
 
     @Override

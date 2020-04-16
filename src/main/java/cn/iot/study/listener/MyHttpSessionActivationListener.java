@@ -16,11 +16,11 @@ public class MyHttpSessionActivationListener implements HttpSessionActivationLis
 
     @Override
     public void sessionWillPassivate(HttpSessionEvent se) {
-
+        System.out.println("sessionWillPassivate, name:" + this.name + ",sessionId:" + se.getSession().getId());
     }
 
     @Override
     public void sessionDidActivate(HttpSessionEvent se) {
-
+        System.out.println("sessionDidActivate, name:" + this.name + ",sessionId:" + se.getSession().getId());
     }
 }
